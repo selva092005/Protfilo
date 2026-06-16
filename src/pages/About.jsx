@@ -64,6 +64,7 @@ const SkillCard = ({ skill, index, getSkillIcon }) => {
       xs={12}
       sm={12}
       md={4}
+      size={{ xs: 12, sm: 12, md: 4 }}
       key={skill.id}
       sx={{ display: 'flex' }}
     >
@@ -209,7 +210,7 @@ export const About = () => {
 
       <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 2 }}>
         {/* Biography & Personal Details Row */}
-        <Grid item xs={12}>
+        <Grid item xs={12} size={{ xs: 12 }}>
           <AnimatedSection direction="up" delay={0.15}>
             <Paper
               sx={{
@@ -343,7 +344,7 @@ export const About = () => {
 
 
         {/* Technical Skills Section */}
-        <Grid item xs={12} sx={{ mt: { xs: 10, md: 12.5 } }}>
+        <Grid item xs={12} size={{ xs: 12 }} sx={{ mt: { xs: 10, md: 12.5 } }}>
           <AnimatedSection direction="up" delay={0.15}>
             <Typography variant="h4" fontWeight="800" color="text.primary" sx={{ mb: 3 }}>
               Technical Expertise
