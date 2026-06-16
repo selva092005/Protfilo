@@ -568,41 +568,41 @@ export const Contact = () => {
               </Box>
 
               {/* Submit Button */}
-              {/* Submit Button */}
               <Button
                 type="submit"
                 variant="contained"
-                fullWidth
                 disabled={isSubmitting}
                 endIcon={!isSubmitting && <SendIcon sx={{ transition: 'transform 0.25s ease-in-out', fontSize: '1.1rem' }} />}
                 sx={{
-                  height: 60,
-                  borderRadius: '14px',
+                  alignSelf: 'flex-start',
+                  height: 48,
+                  px: 4,
+                  borderRadius: '10px',
                   textTransform: 'none',
                   fontWeight: '700',
-                  fontSize: '0.925rem',
-                  background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
-                  color: '#ffffff',
-                  boxShadow: '0 4px 14px rgba(99, 102, 241, 0.25)',
+                  fontSize: '0.875rem',
+                  bgcolor: 'primary.main',
+                  color: 'primary.contrastText',
+                  boxShadow: (theme) => `0 4px 14px ${theme.palette.primary.main}20`,
                   transition: 'all 0.25s ease-in-out',
                   '&:hover': {
-                    background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
-                    boxShadow: '0 6px 20px rgba(99, 102, 241, 0.4)',
-                    transform: 'translateY(-2px)',
+                    bgcolor: 'primary.dark',
+                    boxShadow: (theme) => `0 6px 20px ${theme.palette.primary.main}35`,
+                    transform: 'translateY(-1.5px)',
                     '& .MuiButton-endIcon': {
                       transform: 'translateX(4px)'
                     }
                   },
                   '&.Mui-disabled': {
-                    background: 'rgba(99, 102, 241, 0.45)',
-                    color: 'rgba(255, 255, 255, 0.7)'
+                    bgcolor: 'action.disabledBackground',
+                    color: 'text.disabled'
                   }
                 }}
               >
                 {isSubmitting ? (
                   <Stack direction="row" spacing={1.5} alignItems="center" justifyContent="center">
-                    <CircularProgress size={20} color="inherit" />
-                    <span>Sending Message...</span>
+                    <CircularProgress size={18} color="inherit" />
+                    <span>Sending...</span>
                   </Stack>
                 ) : (
                   'Send Message'
