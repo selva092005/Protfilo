@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
+import ThreeDTextReveal from './ThreeDTextReveal';
+
 export const SectionHeader = ({ title, subtitle, align = 'center' }) => {
   const isCenter = align === 'center';
 
@@ -34,7 +36,7 @@ export const SectionHeader = ({ title, subtitle, align = 'center' }) => {
           }
         }}
       >
-        {title}
+        <ThreeDTextReveal text={title} />
       </Typography>
       {subtitle && (
         <Typography 

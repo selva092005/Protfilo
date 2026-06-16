@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Card, CardContent, Typography, Box, Chip } from '@mui/material';
 
-export const CustomCard = ({ 
-  title, 
-  subtitle, 
-  description, 
-  tags = [], 
-  icon, 
-  actions, 
+export const CustomCard = ({
+  title,
+  subtitle,
+  description,
+  tags = [],
+  icon,
+  actions,
   badge,
   hoverEffect = true,
   onClick,
@@ -25,7 +25,7 @@ export const CustomCard = ({
   };
 
   return (
-    <Card 
+    <Card
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -68,30 +68,30 @@ export const CustomCard = ({
       }}
     >
       {badge && (
-        <Chip 
-          label={badge} 
-          size="small" 
-          color="primary" 
-          sx={{ 
-            position: 'absolute', 
-            top: 16, 
-            right: 16, 
+        <Chip
+          label={badge}
+          size="small"
+          color="primary"
+          sx={{
+            position: 'absolute',
+            top: 16,
+            right: 16,
             fontWeight: '700',
             borderRadius: '6px',
             fontSize: '0.7rem',
-          }} 
+          }}
         />
       )}
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 3, md: 4 }, position: 'relative', zIndex: 1 }}>
         {(icon || subtitle) && (
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 1.75 }}>
             {icon && (
-              <Box 
+              <Box
                 className="card-icon"
-                sx={{ 
-                  mr: 1.25, 
-                  color: 'text.secondary', 
-                  display: 'flex', 
+                sx={{
+                  mr: 1.25,
+                  color: 'text.secondary',
+                  display: 'flex',
                   alignItems: 'center'
                 }}
               >
@@ -99,9 +99,9 @@ export const CustomCard = ({
               </Box>
             )}
             {subtitle && (
-              <Typography 
-                variant="caption" 
-                color="primary" 
+              <Typography
+                variant="caption"
+                color="primary"
                 sx={{ fontWeight: '750', letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.7rem' }}
               >
                 {subtitle}
@@ -109,7 +109,7 @@ export const CustomCard = ({
             )}
           </Box>
         )}
-        
+
         <Typography variant="h6" component="h3" mb={1.25} sx={{ fontWeight: '800', lineHeight: 1.3, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
           {title}
         </Typography>
@@ -123,12 +123,12 @@ export const CustomCard = ({
         {tags.length > 0 && (
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2.5 }}>
             {tags.map((tag) => (
-              <Chip 
-                key={tag} 
-                label={tag} 
-                size="small" 
-                sx={{ 
-                  borderRadius: '6px', 
+              <Chip
+                key={tag}
+                label={tag}
+                size="small"
+                sx={{
+                  borderRadius: '6px',
                   fontSize: '0.7rem',
                   fontWeight: '700',
                   fontFamily: '"JetBrains Mono", monospace',
@@ -136,7 +136,7 @@ export const CustomCard = ({
                   color: 'primary.main',
                   height: 22,
                   '& .MuiChip-label': { px: 1.25 }
-                }} 
+                }}
               />
             ))}
           </Box>

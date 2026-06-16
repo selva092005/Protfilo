@@ -17,7 +17,7 @@ export const App = () => {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.theme.mode);
   const scrollTarget = useSelector((state) => state.portfolio.scrollTarget);
-  
+
   const muiTheme = getTheme(mode);
 
   // Handle smooth scrolling when scrollTarget changes
@@ -27,7 +27,7 @@ export const App = () => {
       if (element) {
         window.isProgrammaticScroll = true;
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
+
         const timer = setTimeout(() => {
           window.isProgrammaticScroll = false;
         }, 800); // Wait for the smooth scroll to finish
@@ -40,7 +40,7 @@ export const App = () => {
   // Scroll Spy using IntersectionObserver
   useEffect(() => {
     const sections = ['home', 'about', 'experience', 'projects', 'contact'];
-    
+
     const observerOptions = {
       root: null,
       // Target area is a band starting 120px from top (below header) to 50% height
@@ -80,10 +80,10 @@ export const App = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline />
-      <Box 
-        sx={{ 
-          minHeight: '100vh', 
-          display: 'flex', 
+      <Box
+        sx={{
+          minHeight: '100vh',
+          display: 'flex',
           flexDirection: 'column',
           background: muiTheme.palette.background.gradient,
           color: 'text.primary',

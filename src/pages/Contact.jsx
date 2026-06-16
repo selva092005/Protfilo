@@ -505,47 +505,43 @@ export const Contact = () => {
                 gap: 3
               }}
             >
-              {/* Name & Email Group - 2 Column Grid */}
-              <Grid container spacing={2.5}>
-                <Grid item xs={12} sm={6}>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-                      YOUR NAME *
-                    </Typography>
-                    <TextField
-                      required
-                      fullWidth
-                      id="name"
-                      placeholder="e.g. John Doe"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      error={!!errors.name}
-                      helperText={errors.name}
-                      sx={inputStyles}
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-                      EMAIL ADDRESS *
-                    </Typography>
-                    <TextField
-                      required
-                      fullWidth
-                      id="email"
-                      placeholder="e.g. john@example.com"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      error={!!errors.email}
-                      helperText={errors.email}
-                      sx={inputStyles}
-                    />
-                  </Box>
-                </Grid>
-              </Grid>
+              {/* Name & Email Group - Responsive Stack */}
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={2.5} sx={{ width: '100%' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, flex: 1 }}>
+                  <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
+                    YOUR NAME *
+                  </Typography>
+                  <TextField
+                    required
+                    fullWidth
+                    id="name"
+                    placeholder="e.g. John Doe"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    error={!!errors.name}
+                    helperText={errors.name}
+                    sx={inputStyles}
+                  />
+                </Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, flex: 1 }}>
+                  <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
+                    EMAIL ADDRESS *
+                  </Typography>
+                  <TextField
+                    required
+                    fullWidth
+                    id="email"
+                    placeholder="e.g. john@example.com"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    error={!!errors.email}
+                    helperText={errors.email}
+                    sx={inputStyles}
+                  />
+                </Box>
+              </Stack>
 
               {/* Message Group */}
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: '100%' }}>

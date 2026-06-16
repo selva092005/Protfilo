@@ -14,6 +14,8 @@ import { motion } from 'framer-motion';
 import { setActiveTab } from '../features/portfolio/portfolioSlice';
 import profileImg from '../assets/IMG20260430150618.jpg.jpeg';
 
+import ThreeDTextReveal from '../components/ThreeDTextReveal';
+
 export const Home = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
@@ -142,7 +144,7 @@ export const Home = () => {
                   lineHeight: 1.15
                 }}
               >
-                {name}
+                <ThreeDTextReveal text={name} delay={0.4} />
               </Typography>
 
               <Typography
@@ -373,7 +375,7 @@ export const Home = () => {
 
           {/* Social Profiles Row */}
           <motion.div variants={itemVariants}>
-            <Box display="flex" flexDirection="column" alignItems="center" gap={3} pt={2} pb={{ xs: 4, md: 6 }}>
+            <Box display="flex" flexDirection="column" alignItems="center" gap={3} pt={2} pb={{ xs: 2, md: 3 }}>
               <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: '0.08em', fontSize: '0.725rem', textTransform: 'uppercase' }}>
                 Connect with me
               </Typography>
@@ -417,6 +419,65 @@ export const Home = () => {
                   <Email sx={{ fontSize: '1.1rem' }} />
                 </IconButton>
               </Stack>
+            </Box>
+          </motion.div>
+
+          {/* Scroll Down Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 0.75, y: 0 }}
+            transition={{ delay: 1.3, duration: 0.8, ease: 'easeOut' }}
+            style={{ marginTop: 'auto', paddingTop: '1.5rem' }}
+          >
+            <Box
+              onClick={() => dispatch(setActiveTab('about'))}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                cursor: 'pointer',
+                transition: 'opacity 0.3s',
+                '&:hover': { opacity: 1 }
+              }}
+            >
+              <Box
+                sx={{
+                  width: 22,
+                  height: 36,
+                  borderRadius: 11,
+                  border: '2px solid',
+                  borderColor: 'text.secondary',
+                  position: 'relative',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  mb: 1.25,
+                  boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 10px rgba(56, 189, 248, 0.1)' : 'none'
+                }}
+              >
+                <Box
+                  component={motion.div}
+                  animate={{
+                    y: [2, 12, 2],
+                    opacity: [1, 0, 1]
+                  }}
+                  transition={{
+                    duration: 1.8,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                  sx={{
+                    width: 4,
+                    height: 8,
+                    borderRadius: '50%',
+                    bgcolor: 'primary.main',
+                    position: 'absolute',
+                    top: 4
+                  }}
+                />
+              </Box>
+              <Typography variant="caption" color="text.secondary" fontWeight="800" sx={{ letterSpacing: '0.12em', textTransform: 'uppercase', fontSize: '0.625rem' }}>
+                Scroll Down
+              </Typography>
             </Box>
           </motion.div>
 

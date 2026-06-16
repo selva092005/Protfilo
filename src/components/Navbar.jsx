@@ -236,8 +236,8 @@ export const Navbar = () => {
                         bottom: 0,
                         bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.05)' : '#ffffff',
                         borderRadius: '16px',
-                        boxShadow: (theme) => theme.palette.mode === 'dark' 
-                          ? 'none' 
+                        boxShadow: (theme) => theme.palette.mode === 'dark'
+                          ? 'none'
                           : '0 2px 8px rgba(0,0,0,0.04)',
                         zIndex: -1
                       }}
