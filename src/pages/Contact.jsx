@@ -574,7 +574,7 @@ export const Contact = () => {
                 disabled={isSubmitting}
                 endIcon={!isSubmitting && <SendIcon />}
                 sx={{
-                  alignSelf: { xs: 'stretch', sm: 'flex-start' },
+                  alignSelf: { xs: 'stretch', sm: 'flex-end' },
                   py: 1.5,
                   px: 4.5,
                   borderRadius: '12px',
