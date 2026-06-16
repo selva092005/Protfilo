@@ -46,7 +46,7 @@ import {
 import AnimatedSection from '../components/AnimatedSection';
 import SectionHeader from '../components/SectionHeader';
 
-const SkillCard = ({ skill, index, getSkillIcon }) => {
+const SkillCard = ({ skill, index, getSkillIcon, isLastOdd }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -62,7 +62,7 @@ const SkillCard = ({ skill, index, getSkillIcon }) => {
     <Grid
       item
       xs={12}
-      sm={6}
+      sm={isLastOdd ? 12 : 6}
       md={4}
       key={skill.id}
       sx={{ display: 'flex' }}
@@ -357,6 +357,7 @@ export const About = () => {
                 skill={skill}
                 index={index}
                 getSkillIcon={getSkillIcon}
+                isLastOdd={skills.length % 2 !== 0 && index === skills.length - 1}
               />
             ))}
           </Grid>
