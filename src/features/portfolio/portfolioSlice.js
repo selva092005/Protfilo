@@ -23,6 +23,7 @@ const initialState = {
     { id: 'expressjs', name: 'Express.js', category: 'backend', color: '#828282' },
     { id: 'springboot', name: 'Spring Boot', category: 'backend', color: '#6db33f' },
     { id: 'mysql', name: 'MySQL', category: 'backend', color: '#4479a1' },
+    { id: 'restapi', name: 'REST API', category: 'backend', color: '#009688' },
     { id: 'git', name: 'Git', category: 'tools', color: '#f05032' }
   ],
   interpersonalSkills: [
@@ -96,8 +97,8 @@ const initialState = {
   projects: [
     {
       title: 'Professional Asset Management System (AMS)',
-      description: 'Developed an enterprise-grade Asset Management System with a high-fidelity dashboard featuring real-time status donut charts, advanced filters, location mapping repositories, and interactive bulk transfer modules.',
-      tags: ['React', 'Redux Toolkit', 'Material UI', 'Data Viz', 'Vite'],
+      description: 'Developed an enterprise-grade Asset Management System with a high-fidelity dashboard featuring real-time status donut charts, advanced filters, location mapping repositories, and interactive bulk transfer modules. Built with React, Spring Boot, MySQL, Redux Toolkit, Material UI, JWT, and WebSockets.',
+      tags: ['React', 'Spring Boot', 'MySQL', 'Redux Toolkit', 'Material UI', 'JWT', 'WebSockets'],
       github: 'https://github.com/selva092005',
       demo: 'https://github.com/selva092005'
     }

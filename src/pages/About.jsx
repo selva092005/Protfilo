@@ -45,6 +45,9 @@ import {
 import {
   FaCss3Alt
 } from 'react-icons/fa';
+import {
+  TbApi
+} from 'react-icons/tb';
 import AnimatedSection from '../components/AnimatedSection';
 import SectionHeader from '../components/SectionHeader';
 
@@ -192,6 +195,8 @@ export const About = () => {
         return <SiSpringboot style={iconStyle} />;
       case 'mysql':
         return <SiMysql style={iconStyle} />;
+      case 'restapi':
+        return <TbApi style={iconStyle} />;
       case 'git':
         return <SiGit style={iconStyle} />;
       case 'css3':
