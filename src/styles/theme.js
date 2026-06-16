@@ -7,30 +7,30 @@ export const getTheme = (mode) => {
     palette: {
       mode,
       primary: {
-        main: isDark ? '#818cf8' : '#4f46e5', // Cyber Indigo vs Royal Indigo
-        contrastText: '#ffffff',
+        main: isDark ? '#38bdf8' : '#0284c7', // Electric Sky Blue vs Ocean Sky Blue
+        contrastText: isDark ? '#030712' : '#ffffff',
       },
       secondary: {
         main: isDark ? '#2dd4bf' : '#0d9488', // Electric Teal vs Teal Green
       },
       background: {
-        default: isDark ? '#080c14' : '#f8fafc', // Deep Midnight vs Slate-white
-        paper: isDark ? '#0f172a' : '#ffffff',   // Midnight Slate vs Pure White
+        default: isDark ? '#030712' : '#f8fafc', // Rich Ink Black vs Slate-white
+        paper: isDark ? '#0b0f19' : '#ffffff',   // Deep Slate vs Pure White
         gradient: isDark 
-          ? 'radial-gradient(circle at 50% 0%, #1e1b4b 0%, #080c14 75%)' // Deep Indigo Glow vs Ash Slate
+          ? 'radial-gradient(circle at 50% 0%, #0f172a 0%, #030712 80%)' // Subtle Slate Glow vs Ash Slate
           : 'radial-gradient(circle at 50% 0%, #f1f5f9 0%, #f8fafc 100%)',
         glass: isDark 
-          ? 'rgba(15, 23, 42, 0.75)' 
+          ? 'rgba(11, 15, 25, 0.75)' 
           : 'rgba(255, 255, 255, 0.75)',
         cardGradient: isDark
-          ? 'linear-gradient(145deg, #1e293b 0%, #0f172a 100%)'
+          ? 'linear-gradient(145deg, #0b0f19 0%, #030712 100%)'
           : 'linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%)',
       },
       text: {
         primary: isDark ? '#f8fafc' : '#0f172a',  // Off-white vs Navy-black
         secondary: isDark ? '#94a3b8' : '#475569', // Muted slate vs Charcoal
       },
-      divider: isDark ? 'rgba(248, 250, 252, 0.08)' : 'rgba(15, 23, 42, 0.08)',
+      divider: isDark ? 'rgba(248, 250, 252, 0.06)' : 'rgba(15, 23, 42, 0.06)',
     },
     typography: {
       fontFamily: '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
@@ -118,20 +118,20 @@ export const getTheme = (mode) => {
             },
           },
           containedPrimary: {
-            background: isDark ? '#818cf8' : '#4f46e5',
-            color: '#ffffff',
+            background: isDark ? '#38bdf8' : '#0284c7',
+            color: isDark ? '#030712' : '#ffffff',
             '&:hover': {
-              background: isDark ? '#6366f1' : '#3730a3',
+              background: isDark ? '#0ea5e9' : '#0369a1',
             },
           },
           outlined: {
             borderWidth: '1px',
-            borderColor: isDark ? 'rgba(248, 250, 252, 0.2)' : 'rgba(15, 23, 42, 0.2)',
+            borderColor: isDark ? 'rgba(248, 250, 252, 0.15)' : 'rgba(15, 23, 42, 0.15)',
             color: isDark ? '#f8fafc' : '#0f172a',
             '&:hover': {
               borderWidth: '1px',
-              borderColor: isDark ? '#818cf8' : '#4f46e5',
-              bgcolor: isDark ? 'rgba(248, 250, 252, 0.04)' : 'rgba(15, 23, 42, 0.02)',
+              borderColor: isDark ? '#38bdf8' : '#0284c7',
+              bgcolor: isDark ? 'rgba(56, 189, 248, 0.06)' : 'rgba(2, 132, 199, 0.04)',
             },
           },
         },
