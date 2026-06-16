@@ -231,7 +231,8 @@ export const Contact = () => {
                     mb: 4,
                     lineHeight: 1.6, 
                     fontSize: { xs: '0.85rem', sm: '0.875rem' },
-                    maxWidth: '90%'
+                    maxWidth: '90%',
+                    textAlign: 'justify'
                   }}
                 >
                   Have an exciting project in mind? Or looking for a passionate developer to join your team? I'm always open to discussing new opportunities.

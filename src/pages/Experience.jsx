@@ -169,7 +169,7 @@ const TimelineItem = ({ item, index, isLast }) => {
                 </Box>
               </>
             ) : (
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75 }}>
+              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75, textAlign: 'justify' }}>
                 {item.description}
               </Typography>
             )}
