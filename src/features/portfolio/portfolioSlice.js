@@ -3,14 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   profile: {
     name: 'Selva Bharathi V',
-    title: 'React Developer',
+    title: 'Full-Stack Developer',
     email: 'selvabharathi2005vss@gmail.com',
     phone: '9384447886',
     location: 'Vriddhachalam, India',
     linkedin: 'https://www.linkedin.com/in/v-selva-bharathi-2638a6269',
     github: 'https://github.com/selva092005',
     web3FormsKey: '78b076d1-fc79-4b2f-a3ab-7c28b46ed344', // Get your free access key at https://web3forms.com
-    summary: 'Detail-oriented React Developer dedicated to constructing highly performant, responsive, and visually refined web architectures. Proficient in React, JavaScript (ES6+), and state management (Redux Toolkit), with practical experience in designing and developing enterprise-grade systems such as a professional Asset Management System (AMS). Committed to delivering responsive, scalable, and clean digital interfaces.'
+    summary: 'Innovative Full-Stack Developer with expertise in building scalable, responsive, and user-centric web applications. Proficient in React, Redux Toolkit, Material UI, Spring Boot, MySQL, and REST APIs. Experienced in developing end-to-end solutions that streamline business processes, automate workflows, and improve operational efficiency. Passionate about creating performant, accessible, and maintainable software while continuously expanding technical expertise and adopting modern development practices.'
   },
   skills: [
     { id: 'html', name: 'HTML/CSS', category: 'frontend', color: '#e34f26' },
@@ -97,7 +97,7 @@ const initialState = {
   projects: [
     {
       title: 'Professional Asset Management System (AMS)',
-      description: 'Developed an enterprise-grade Asset Management System with a high-fidelity dashboard featuring real-time status donut charts, advanced filters, location mapping repositories, and interactive bulk transfer modules. Built with React, Spring Boot, MySQL, Redux Toolkit, Material UI, JWT, and WebSockets.',
+      description: 'Engineered a full-stack Asset Management System (AMS) to manage the end-to-end asset lifecycle—covering procurement, registration, bulk allocation, maintenance tracking, and disposal. Built with a secure Spring Boot and MySQL backend, and a responsive React frontend using Redux Toolkit and Material UI, the platform streamlines resource workflows and exports audit-ready reports.',
       tags: ['React', 'Spring Boot', 'MySQL', 'Redux Toolkit', 'Material UI', 'JWT', 'WebSockets'],
       github: 'https://github.com/selva092005',
       demo: 'https://github.com/selva092005'
