@@ -82,7 +82,7 @@ export const CustomCard = ({
           }}
         />
       )}
-      <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 3, md: 4 }, position: 'relative', zIndex: 1 }}>
+      <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 3, md: 4 }, pb: { xs: 4, md: 5 }, position: 'relative', zIndex: 1 }}>
         {(icon || subtitle) && (
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 1.75 }}>
             {icon && (
@@ -110,12 +110,23 @@ export const CustomCard = ({
           </Box>
         )}
 
-        <Typography variant="h6" component="h3" mb={1.25} sx={{ fontWeight: '800', lineHeight: 1.3, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
+        <Typography variant="h6" component="h3" sx={{ mb: '24px', fontWeight: '800', lineHeight: 1.3, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
           {title}
         </Typography>
 
         {description && (
-          <Typography variant="body2" color="text.secondary" mb={2.5} sx={{ flexGrow: 1, lineHeight: 1.7, fontSize: { xs: '0.85rem', sm: '0.875rem' } }}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{
+              mb: 4,
+              flexGrow: 1,
+              lineHeight: 1.8,
+              fontWeight: 500,
+              fontSize: '1rem',
+              textAlign: 'justify'
+            }}
+          >
             {description}
           </Typography>
         )}

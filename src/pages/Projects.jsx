@@ -75,7 +75,7 @@ export const Projects = () => {
 
       <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 2 }}>
         {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} size={{ xs: 12, sm: 6, md: 4 }} key={index} sx={{ display: 'flex', width: '100%' }}>
+          <Grid item xs={12} sm={12} md={12} size={{ xs: 12, sm: 12, md: 12 }} key={index} sx={{ display: 'flex', width: '100%' }}>
             <AnimatedSection
               direction="up"
               delay={index * 0.1}
@@ -86,7 +86,7 @@ export const Projects = () => {
                 description={project.description}
                 tags={project.tags}
                 actions={getProjectActions(project)}
-                sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}
+                sx={{ width: '100%', height: 'auto', display: 'flex', flexDirection: 'column' }}
               />
             </AnimatedSection>
           </Grid>

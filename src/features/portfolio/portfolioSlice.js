@@ -18,8 +18,8 @@ const initialState = {
     { id: 'html', name: 'HTML/CSS', category: 'frontend', color: '#e34f26' },
     { id: 'nodejs', name: 'Node.js', category: 'backend', color: '#339933' },
     { id: 'expressjs', name: 'Express.js', category: 'backend', color: '#828282' },
-    { id: 'mongodb', name: 'MongoDB', category: 'backend', color: '#47a248' },
-    { id: 'sql', name: 'SQL', category: 'backend', color: '#336791' },
+    { id: 'springboot', name: 'Spring Boot', category: 'backend', color: '#6db33f' },
+    { id: 'mysql', name: 'MySQL', category: 'backend', color: '#4479a1' },
     { id: 'git', name: 'Git', category: 'tools', color: '#f05032' },
     { id: 'css3', name: 'CSS3', category: 'frontend', color: '#1572b6' }
   ],
@@ -98,34 +98,6 @@ const initialState = {
       tags: ['React', 'Redux Toolkit', 'Material UI', 'Data Viz', 'Vite'],
       github: 'https://github.com/selva092005',
       demo: 'https://github.com/selva092005'
-    },
-    {
-      title: 'Live Weather Tracker',
-      description: 'Designed a Live Weather Tracker using React with API integration to display real-time weather information. Shows temperature, weather conditions, humidity, wind speed, and location details with a dynamic interface.',
-      tags: ['React', 'API Integration', 'Responsive', 'CSS'],
-      github: 'https://github.com/selva092005',
-      demo: 'https://weatherapp-gules-eight.vercel.app/'
-    },
-    {
-      title: 'Movie Search Application',
-      description: 'Built a Movie Search Application using API integration to fetch and display real-time movie details based on user input.',
-      tags: ['JavaScript', 'API Integration', 'HTML/CSS', 'Responsive'],
-      github: 'https://github.com/selva092005',
-      demo: 'https://selva092005.github.io/Movie-Search-Application/'
-    },
-    {
-      title: 'Web Calculator',
-      description: 'Created a responsive web calculator using JavaScript DOM manipulation with a mobile-friendly design.',
-      tags: ['HTML5', 'CSS3', 'JavaScript DOM', 'Responsive'],
-      github: 'https://github.com/selva092005',
-      demo: 'https://selva092005.github.io/Web-Calculator/'
-    },
-    {
-      title: 'Qr Code Generator',
-      description: 'Developed a QR Code Generator that generates QR codes instantly based on user input with a simple and responsive interface.',
-      tags: ['JavaScript', 'QR API', 'Responsive', 'UI/UX'],
-      github: 'https://github.com/selva092005',
-      demo: 'https://selva092005.github.io/Qr-Code-Generator/'
     }
   ],
   languages: [

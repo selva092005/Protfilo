@@ -36,11 +36,11 @@ import {
   SiTailwindcss,
   SiNodedotjs,
   SiExpress,
-  SiMongodb,
-  SiGit
+  SiSpringboot,
+  SiGit,
+  SiMysql
 } from 'react-icons/si';
 import {
-  FaDatabase,
   FaCss3Alt
 } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
@@ -186,10 +186,10 @@ export const About = () => {
         return <SiNodedotjs style={iconStyle} />;
       case 'expressjs':
         return <SiExpress style={iconStyle} />;
-      case 'mongodb':
-        return <SiMongodb style={iconStyle} />;
-      case 'sql':
-        return <FaDatabase style={iconStyle} />;
+      case 'springboot':
+        return <SiSpringboot style={iconStyle} />;
+      case 'mysql':
+        return <SiMysql style={iconStyle} />;
       case 'git':
         return <SiGit style={iconStyle} />;
       case 'css3':
