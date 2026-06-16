@@ -13,15 +13,17 @@ const initialState = {
     summary: 'Detail-oriented React Developer dedicated to constructing highly performant, responsive, and visually refined web architectures. Proficient in React, JavaScript (ES6+), and state management (Redux Toolkit), with practical experience in designing and developing enterprise-grade systems such as a professional Asset Management System (AMS). Committed to delivering responsive, scalable, and clean digital interfaces.'
   },
   skills: [
-    { id: 'react', name: 'React.js', category: 'frontend', color: '#00d8ff' },
-    { id: 'javascript', name: 'JavaScript', category: 'frontend', color: '#f7df1e' },
     { id: 'html', name: 'HTML/CSS', category: 'frontend', color: '#e34f26' },
+    { id: 'css3', name: 'CSS3', category: 'frontend', color: '#1572b6' },
+    { id: 'javascript', name: 'JavaScript', category: 'frontend', color: '#f7df1e' },
+    { id: 'bootstrap', name: 'Bootstrap', category: 'frontend', color: '#7952b3' },
+    { id: 'mui', name: 'Material UI', category: 'frontend', color: '#0081CB' },
+    { id: 'react', name: 'React.js', category: 'frontend', color: '#00d8ff' },
     { id: 'nodejs', name: 'Node.js', category: 'backend', color: '#339933' },
     { id: 'expressjs', name: 'Express.js', category: 'backend', color: '#828282' },
     { id: 'springboot', name: 'Spring Boot', category: 'backend', color: '#6db33f' },
     { id: 'mysql', name: 'MySQL', category: 'backend', color: '#4479a1' },
-    { id: 'git', name: 'Git', category: 'tools', color: '#f05032' },
-    { id: 'css3', name: 'CSS3', category: 'frontend', color: '#1572b6' }
+    { id: 'git', name: 'Git', category: 'tools', color: '#f05032' }
   ],
   interpersonalSkills: [
     'Problem Solving',

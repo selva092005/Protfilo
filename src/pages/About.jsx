@@ -38,7 +38,9 @@ import {
   SiExpress,
   SiSpringboot,
   SiGit,
-  SiMysql
+  SiMysql,
+  SiBootstrap,
+  SiMui
 } from 'react-icons/si';
 import {
   FaCss3Alt
@@ -194,6 +196,10 @@ export const About = () => {
         return <SiGit style={iconStyle} />;
       case 'css3':
         return <FaCss3Alt style={iconStyle} />;
+      case 'bootstrap':
+        return <SiBootstrap style={iconStyle} />;
+      case 'mui':
+        return <SiMui style={iconStyle} />;
       default:
         return <SiReact style={iconStyle} />;
     }
