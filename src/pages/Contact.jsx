@@ -567,36 +567,19 @@ export const Contact = () => {
                 />
               </Box>
 
-              {/* Submit Button */}
               <Button
                 type="submit"
                 variant="contained"
+                color="primary"
                 disabled={isSubmitting}
-                endIcon={!isSubmitting && <SendIcon sx={{ transition: 'transform 0.25s ease-in-out', fontSize: '1.1rem' }} />}
+                endIcon={!isSubmitting && <SendIcon />}
                 sx={{
                   alignSelf: 'flex-start',
-                  height: 48,
-                  px: 4,
-                  borderRadius: '10px',
-                  textTransform: 'none',
-                  fontWeight: '700',
-                  fontSize: '0.875rem',
-                  bgcolor: 'primary.main',
-                  color: 'primary.contrastText',
-                  boxShadow: (theme) => `0 4px 14px ${theme.palette.primary.main}20`,
-                  transition: 'all 0.25s ease-in-out',
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                    boxShadow: (theme) => `0 6px 20px ${theme.palette.primary.main}35`,
-                    transform: 'translateY(-1.5px)',
-                    '& .MuiButton-endIcon': {
-                      transform: 'translateX(4px)'
-                    }
-                  },
-                  '&.Mui-disabled': {
-                    bgcolor: 'action.disabledBackground',
-                    color: 'text.disabled'
-                  }
+                  py: 1.5,
+                  px: 4.5,
+                  borderRadius: '12px',
+                  fontWeight: 700,
+                  textTransform: 'none'
                 }}
               >
                 {isSubmitting ? (
