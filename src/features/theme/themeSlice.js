@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const getInitialMode = () => {
   const savedMode = localStorage.getItem('themeMode');
   if (savedMode) return savedMode;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return 'light'; // Default to light mode first
 };
 
 const themeSlice = createSlice({
