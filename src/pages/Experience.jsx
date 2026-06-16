@@ -309,11 +309,11 @@ export const Experience = () => {
                         borderColor: 'primary.main',
                         transform: 'translateY(-3px)',
                         boxShadow: (theme) => theme.palette.mode === 'dark'
-                          ? '0 10px 25px -8px rgba(99, 102, 241, 0.2)'
-                          : '0 10px 25px -8px rgba(99, 102, 241, 0.08)',
+                          ? '0 10px 25px -8px rgba(56, 189, 248, 0.25)'
+                          : '0 10px 25px -8px rgba(2, 132, 199, 0.08)',
                         '& .watermark-icon': {
                           transform: 'rotate(0deg) scale(1.15)',
-                          opacity: 0.12,
+                          opacity: 0.25,
                           color: 'primary.main'
                         }
                       }
@@ -327,8 +327,8 @@ export const Experience = () => {
                         right: -12,
                         bottom: -15,
                         fontSize: '6rem',
-                        opacity: 0.05,
-                        color: 'text.secondary',
+                        opacity: (theme) => theme.palette.mode === 'dark' ? 0.12 : 0.05,
+                        color: 'primary.main',
                         pointerEvents: 'none',
                         transform: 'rotate(-15deg)',
                         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'

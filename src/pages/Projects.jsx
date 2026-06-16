@@ -30,7 +30,7 @@ export const Projects = () => {
           '&:hover': {
             borderColor: 'primary.main',
             color: 'primary.main',
-            bgcolor: 'rgba(99, 102, 241, 0.04)',
+            bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(56, 189, 248, 0.06)' : 'rgba(2, 132, 199, 0.04)',
             transform: 'translateY(-1px)'
           }
         }}

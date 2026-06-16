@@ -274,7 +274,7 @@ export const About = () => {
                   </Typography>
                 </Box>
 
-                <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.8, fontWeight: 500, fontSize: '1rem' }}>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.8, fontWeight: 500, fontSize: '1rem', textAlign: 'justify' }}>
                   {profile.summary}
                 </Typography>
               </Box>
@@ -316,8 +316,12 @@ export const About = () => {
                         rel="noopener noreferrer"
                         variant="body2"
                         fontWeight="700"
-                        color="primary.main"
-                        sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+                        sx={{
+                          color: (theme) => theme.palette.mode === 'dark' ? '#00a0dc' : '#0a66c2', // LinkedIn blue
+                          textDecoration: 'none',
+                          transition: 'color 0.2s ease',
+                          '&:hover': { color: '#0077b5', textDecoration: 'underline' }
+                        }}
                       >
                         LinkedIn
                       </Typography>
@@ -329,8 +333,12 @@ export const About = () => {
                         rel="noopener noreferrer"
                         variant="body2"
                         fontWeight="700"
-                        color="primary.main"
-                        sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+                        sx={{
+                          color: (theme) => theme.palette.mode === 'dark' ? '#bc8cff' : '#8250df', // GitHub Brand Purple
+                          textDecoration: 'none',
+                          transition: 'color 0.2s ease',
+                          '&:hover': { color: '#a371f7', textDecoration: 'underline' }
+                        }}
                       >
                         GitHub
                       </Typography>

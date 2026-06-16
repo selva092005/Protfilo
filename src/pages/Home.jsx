@@ -16,6 +16,8 @@ import profileImg from '../assets/IMG20260430150618.jpg.jpeg';
 
 import ThreeDTextReveal from '../components/ThreeDTextReveal';
 
+
+
 export const Home = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
@@ -70,20 +72,62 @@ export const Home = () => {
 
           {/* Circular Profile Picture */}
           <motion.div variants={itemVariants} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <Box sx={{ position: 'relative', display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }}>
+
+              {/* Atmospheric Background Glows (Static, no keyframe animations) */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: '-5%',
+                  left: '-5%',
+                  right: '-5%',
+                  bottom: '-5%',
+                  borderRadius: '50%',
+                  background: (theme) => `radial-gradient(circle, ${theme.palette.secondary.main} 0%, transparent 70%)`,
+                  filter: 'blur(35px)',
+                  opacity: (theme) => theme.palette.mode === 'dark' ? 0.25 : 0.12,
+                  zIndex: 0,
+                  pointerEvents: 'none',
+                }}
+              />
+
+              {/* Intersecting Orbit Crescent (Primary-to-Secondary Gradient Line) */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: -8,
+                  left: -8,
+                  width: { xs: 196, sm: 236, md: 266 },
+                  height: { xs: 196, sm: 236, md: 266 },
+                  borderRadius: '50%',
+                  border: '2.5px solid',
+                  borderColor: 'secondary.main',
+                  background: 'transparent',
+                  // Only show the left-to-bottom crescent arc
+                  clipPath: 'polygon(0 0, 60% 0, 10% 100%, 0 100%)',
+                  zIndex: 0,
+                  pointerEvents: 'none',
+                }}
+              />
+
+              {/* Main Image Button (Perfect Circle) */}
               <ButtonBase
                 onClick={() => setIsImgExpanded(true)}
                 sx={{
+                  width: { xs: 180, sm: 220, md: 250 },
+                  height: { xs: 180, sm: 220, md: 250 },
                   borderRadius: '50%',
-                  p: 0, // Remove the whitespace gap
-                  border: '2px solid', // Sleek 2px border
-                  borderColor: 'secondary.main', // Teal/Cyan color
+                  p: 0,
+                  border: '2px solid',
+                  borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.85)' : 'rgba(15,23,42,0.85)',
                   boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 12px 40px rgba(0, 0, 0, 0.4)' : '0 12px 30px rgba(15, 23, 42, 0.05)',
-                  transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                  zIndex: 1,
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease-in-out',
                   '&:hover': {
-                    transform: 'scale(1.03)',
-                    borderColor: 'primary.main', // Cyber Indigo on hover
-                    boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 16px 48px rgba(129, 140, 248, 0.15)' : '0 16px 36px rgba(79, 70, 229, 0.1)'
+                    transform: 'scale(1.02)',
+                    borderColor: 'primary.main',
+                    boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 16px 48px rgba(129, 140, 248, 0.2)' : '0 16px 36px rgba(79, 70, 229, 0.12)'
                   }
                 }}
               >
@@ -92,8 +136,8 @@ export const Home = () => {
                   src={profileImg}
                   alt={name}
                   sx={{
-                    width: { xs: 150, sm: 180, md: 200 },
-                    height: { xs: 150, sm: 180, md: 200 },
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                     display: 'block',
                     objectFit: 'cover',
@@ -104,6 +148,72 @@ export const Home = () => {
                   }}
                 />
               </ButtonBase>
+
+              {/* Status Badge: Available for Work */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  bottom: -10,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 2,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  px: 1.8,
+                  py: 0.7,
+                  borderRadius: '20px',
+                  bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(30, 41, 59, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid',
+                  borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+                  boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 4px 12px rgba(0,0,0,0.3)' : '0 4px 12px rgba(0,0,0,0.05)',
+                  pointerEvents: 'none',
+                }}
+              >
+                {/* Glowing status dot */}
+                <Box sx={{ position: 'relative', display: 'flex', width: 8, height: 8 }}>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      bgcolor: '#10b981',
+                      opacity: 0.75,
+                      animation: 'radar 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite',
+                      '@keyframes radar': {
+                        '0%': { transform: 'scale(1)', opacity: 0.8 },
+                        '100%': { transform: 'scale(3.5)', opacity: 0 }
+                      }
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      bgcolor: '#10b981',
+                      zIndex: 1
+                    }}
+                  />
+                </Box>
+                <Typography
+                  sx={{
+                    fontSize: '0.675rem',
+                    fontWeight: 750,
+                    color: 'text.primary',
+                    letterSpacing: '0.01em',
+                    textTransform: 'uppercase',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  Open to Work
+                </Typography>
+              </Box>
+
             </Box>
           </motion.div>
 
@@ -136,7 +246,7 @@ export const Home = () => {
               <Typography
                 variant="h1"
                 sx={{
-                  fontFamily: '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                  fontFamily: '"Outfit", "Plus Jakarta Sans", sans-serif',
                   fontWeight: 800,
                   color: 'text.primary',
                   fontSize: { xs: '2.5rem', sm: '3.4rem', md: '3.8rem' },
@@ -151,17 +261,17 @@ export const Home = () => {
                 variant="h3"
                 color="text.secondary"
                 sx={{
-                  fontFamily: '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                  fontWeight: 700,
+                  fontFamily: '"Outfit", "Plus Jakarta Sans", sans-serif',
+                  fontWeight: 800,
                   fontSize: { xs: '1.35rem', sm: '1.75rem' },
-                  letterSpacing: '-0.015em',
+                  letterSpacing: '0.02em',
+                  textTransform: 'uppercase',
                 }}
               >
                 <Box
                   component="span"
                   sx={{
                     color: 'primary.main',
-                    fontWeight: 800,
                     background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -184,7 +294,8 @@ export const Home = () => {
                   fontWeight: 500,
                   lineHeight: 1.8,
                   fontSize: '1rem',
-                  mx: 'auto'
+                  mx: 'auto',
+                  textAlign: 'justify'
                 }}
               >
                 {summary}
@@ -286,10 +397,10 @@ export const Home = () => {
 
           {/* Call-to-Action Buttons */}
           <motion.div variants={itemVariants} style={{ width: '100%' }}>
-            <Stack 
-              direction={{ xs: 'column', sm: 'row' }} 
-              spacing={2.2} 
-              justifyContent="center" 
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={2.2}
+              justifyContent="center"
               alignItems="center"
               sx={{ flexWrap: 'wrap' }}
             >

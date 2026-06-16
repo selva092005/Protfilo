@@ -34,6 +34,57 @@ const navItems = [
   { id: 'contact', label: 'Contact' }
 ];
 
+const LetterFlipLogo = ({ text }) => {
+  const theme = useTheme();
+  const letters = Array.from(text);
+
+  const letterVariants = {
+    initial: { rotateY: 0, color: 'inherit' },
+    hover: (i) => ({
+      rotateY: 360,
+      color: theme.palette.primary.main,
+      transition: {
+        type: 'spring',
+        stiffness: 140,
+        damping: 12,
+        delay: i * 0.04,
+      }
+    })
+  };
+
+  return (
+    <Box
+      component={motion.div}
+      initial="initial"
+      whileHover="hover"
+      sx={{
+        display: 'inline-flex',
+        flexWrap: 'nowrap',
+        fontWeight: 900,
+        letterSpacing: '-0.02em',
+        fontSize: '0.95rem',
+        color: 'text.primary',
+      }}
+    >
+      {letters.map((char, i) => (
+        <motion.span
+          key={i}
+          custom={i}
+          variants={letterVariants}
+          style={{
+            display: 'inline-block',
+            whiteSpace: 'pre',
+            transformStyle: 'preserve-3d',
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </Box>
+  );
+};
+
 export const Navbar = () => {
   const dispatch = useDispatch();
   const activeTab = useSelector((state) => state.portfolio.activeTab);
@@ -172,18 +223,7 @@ export const Navbar = () => {
             sx={{ cursor: 'pointer', py: 0.5 }}
             onClick={() => handleNavClick('home')}
           >
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{
-                fontWeight: 900,
-                letterSpacing: '-0.02em',
-                color: 'text.primary',
-                fontSize: '0.95rem'
-              }}
-            >
-              SELVA BHARATHI V
-            </Typography>
+            <LetterFlipLogo text="SELVA BHARATHI V" />
           </Box>
 
           {/* Links - Center (Desktop) */}

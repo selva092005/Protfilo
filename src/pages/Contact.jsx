@@ -122,11 +122,11 @@ export const Contact = () => {
         borderColor: 'primary.main',
       },
       '&.Mui-focused fieldset': {
-        borderColor: '#6366F1',
+        borderColor: 'primary.main',
         borderWidth: '1.5px',
       },
       '&.Mui-focused': {
-        boxShadow: '0 0 0 4px rgba(99, 102, 241, 0.15)',
+        boxShadow: (theme) => `0 0 0 4px ${theme.palette.primary.main}26`,
       }
     },
     '& .MuiOutlinedInput-input': {
@@ -252,6 +252,7 @@ export const Contact = () => {
                       border: '1px solid',
                       borderColor: 'divider',
                       textDecoration: 'none',
+                      color: 'text.primary',
                       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                       '&:hover': {
                         transform: 'translateY(-2px)',
@@ -268,7 +269,7 @@ export const Contact = () => {
                         width: 50,
                         height: 50,
                         borderRadius: '10px',
-                        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(99, 102, 241, 0.06)',
+                        bgcolor: (theme) => theme.palette.mode === 'dark' ? `${theme.palette.primary.main}14` : `${theme.palette.primary.main}08`,
                         border: '1px solid',
                         borderColor: 'divider',
                         display: 'flex',
@@ -311,6 +312,7 @@ export const Contact = () => {
                       border: '1px solid',
                       borderColor: 'divider',
                       textDecoration: 'none',
+                      color: 'text.primary',
                       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                       '&:hover': {
                         transform: 'translateY(-2px)',
@@ -327,7 +329,7 @@ export const Contact = () => {
                         width: 50,
                         height: 50,
                         borderRadius: '10px',
-                        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(99, 102, 241, 0.06)',
+                        bgcolor: (theme) => theme.palette.mode === 'dark' ? `${theme.palette.primary.main}14` : `${theme.palette.primary.main}08`,
                         border: '1px solid',
                         borderColor: 'divider',
                         display: 'flex',
@@ -382,7 +384,7 @@ export const Contact = () => {
                         width: 50,
                         height: 50,
                         borderRadius: '10px',
-                        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(99, 102, 241, 0.06)',
+                        bgcolor: (theme) => theme.palette.mode === 'dark' ? `${theme.palette.primary.main}14` : `${theme.palette.primary.main}08`,
                         border: '1px solid',
                         borderColor: 'divider',
                         display: 'flex',

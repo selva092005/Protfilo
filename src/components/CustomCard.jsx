@@ -51,7 +51,7 @@ export const CustomCard = ({
           left: 0,
           right: 0,
           bottom: 0,
-          background: (theme) => `radial-gradient(300px circle at ${coords.x}px ${coords.y}px, ${theme.palette.mode === 'dark' ? 'rgba(99, 102, 241, 0.1)' : 'rgba(99, 102, 241, 0.04)'}, transparent 80%)`,
+          background: (theme) => `radial-gradient(300px circle at ${coords.x}px ${coords.y}px, ${theme.palette.mode === 'dark' ? `${theme.palette.primary.main}1a` : `${theme.palette.primary.main}0a`}, transparent 80%)`,
           opacity: isHovered && hoverEffect ? 1 : 0,
           transition: 'opacity 0.4s ease',
           pointerEvents: 'none',
@@ -61,8 +61,8 @@ export const CustomCard = ({
           transform: 'translateY(-4px)',
           borderColor: 'primary.main',
           boxShadow: (theme) => theme.palette.mode === 'dark'
-            ? '0 8px 25px -8px rgba(99, 102, 241, 0.2)'
-            : '0 8px 25px -8px rgba(99, 102, 241, 0.08)'
+            ? `0 8px 25px -8px ${theme.palette.primary.main}40`
+            : `0 8px 25px -8px ${theme.palette.primary.main}14`
         } : {},
         ...sx
       }}
@@ -132,7 +132,7 @@ export const CustomCard = ({
                   fontSize: '0.7rem',
                   fontWeight: '700',
                   fontFamily: '"JetBrains Mono", monospace',
-                  bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(99, 102, 241, 0.08)' : 'rgba(99, 102, 241, 0.04)',
+                  bgcolor: (theme) => theme.palette.mode === 'dark' ? `${theme.palette.primary.main}14` : `${theme.palette.primary.main}0a`,
                   color: 'primary.main',
                   height: 22,
                   '& .MuiChip-label': { px: 1.25 }
