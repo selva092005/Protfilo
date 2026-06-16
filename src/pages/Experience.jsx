@@ -213,7 +213,7 @@ export const Experience = () => {
 
       <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 2 }}>
         {/* Internship & Education Timeline */}
-        <Grid item xs={12} md={12} sx={{ mb: 6 }}>
+        <Grid item xs={12} md={12} size={{ xs: 12, md: 12 }} sx={{ mb: 6 }}>
           <AnimatedSection direction="up" delay={0.15}>
             <Typography 
               variant="h4" 
@@ -270,7 +270,7 @@ export const Experience = () => {
         </Grid>
 
         {/* Certifications Grid */}
-        <Grid item xs={12} md={12} sx={{ mt: { xs: 8, md: 10 } }}>
+        <Grid item xs={12} md={12} size={{ xs: 12, md: 12 }} sx={{ mt: { xs: 8, md: 10 } }}>
           <AnimatedSection direction="up" delay={0.15}>
             <Typography 
               variant="h4" 
@@ -288,7 +288,7 @@ export const Experience = () => {
 
           <Grid container spacing={{ xs: 2, md: 3 }}>
             {certifications.map((cert, index) => (
-              <Grid item xs={12} sm={6} md={6} key={`cert-${index}`} sx={{ display: 'flex', width: '100%' }}>
+              <Grid item xs={12} sm={6} md={6} size={{ xs: 12, sm: 6, md: 6 }} key={`cert-${index}`} sx={{ display: 'flex', width: '100%' }}>
                 <AnimatedSection direction="left" delay={0.1 + index * 0.1} style={{ display: 'flex', width: '100%' }}>
                   <Card
                     sx={{
