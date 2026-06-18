@@ -12,7 +12,7 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { setActiveTab } from '../features/portfolio/portfolioSlice';
-import profileImg from '../assets/IMG20260430150618.jpg.jpeg';
+import profileImg from '../assets/with court 1.png';
 
 import ThreeDTextReveal from '../components/ThreeDTextReveal';
 
