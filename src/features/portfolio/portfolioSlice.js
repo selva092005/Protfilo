@@ -3,14 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   profile: {
     name: 'Selva Bharathi V',
-    title: 'Full-Stack Developer',
+    title: 'Frontend Developer',
     email: 'selvabharathi2005vss@gmail.com',
     phone: '9384447886',
     location: 'Vriddhachalam, India',
     linkedin: 'https://www.linkedin.com/in/v-selva-bharathi-2638a6269',
     github: 'https://github.com/selva092005',
     web3FormsKey: '78b076d1-fc79-4b2f-a3ab-7c28b46ed344', // Get your free access key at https://web3forms.com
-    summary: 'Innovative Full-Stack Developer with expertise in building scalable, responsive, and user-centric web applications. Proficient in React, Redux Toolkit, Material UI, Spring Boot, MySQL, and REST APIs. Experienced in developing end-to-end solutions that streamline business processes, automate workflows, and improve operational efficiency. Passionate about creating performant, accessible, and maintainable software while continuously expanding technical expertise and adopting modern development practices.'
+    summary: 'Innovative Frontend Developer with expertise in building scalable, responsive, and user-centric web applications. Proficient in React, Redux Toolkit, Material UI, Spring Boot, MySQL, and REST APIs. Experienced in developing end-to-end solutions that streamline business processes, automate workflows, and improve operational efficiency. Passionate about creating performant, accessible, and maintainable software while continuously expanding technical expertise and adopting modern development practices.'
   },
   skills: [
     { id: 'html', name: 'HTML/CSS', category: 'frontend', color: '#e34f26' },
@@ -59,24 +59,16 @@ const initialState = {
     {
       role: 'React Developer Intern',
       company: 'Cavin Infotech',
-      location: 'Remote',
-      duration: 'June 2026 - Present',
+      location: 'On-site',
+      duration: 'Feb 2026 - Present',
       description: 'Developing responsive web interfaces, optimizing UI performance, and collaborating on product modules. Programmed key features for a professional Asset Management System (AMS) including interactive dashboards, status charts, and state-synchronized bulk transfer operations using React, Redux Toolkit, and Material UI.'
-    },
-    {
-      role: 'Python Developer Intern',
-      company: 'Zealous Tech Corp',
-      location: 'Salem',
-      duration: '12/2024 - 01/2025',
-      description: 'Completed a Python Internship with practical experience in Python development, scripting, and problem-solving.'
     }
   ],
   certifications: [
     {
-      title: 'Python Developer',
-      issuer: 'Zealous Tech Corp',
-      duration: '12/2024 - 01/2025',
-      location: 'Salem'
+      title: 'Certificate of Completion – CSS',
+      issuer: 'CodeKaro',
+      duration: '21st Mar 2025'
     },
     {
       title: 'Fundamental Of Artificial Intelligence',
@@ -84,9 +76,9 @@ const initialState = {
       duration: '07/2024 - 10/2025'
     },
     {
-      title: 'Introduction To Internet Of Things',
-      issuer: 'NPTEL',
-      duration: '01/2025 - 10/2025'
+      title: 'Certificate of Completion – JavaScript',
+      issuer: 'CodeKaro',
+      duration: '18th May 2025'
     },
     {
       title: 'Ethics in Engineering',
@@ -96,11 +88,28 @@ const initialState = {
   ],
   projects: [
     {
-      title: 'Professional Asset Management System (AMS)',
+      id: 'ams',
+      title: 'Asset Management System (AMS)',
       description: 'Engineered a full-stack Asset Management System (AMS) to manage the end-to-end asset lifecycle—covering procurement, registration, bulk allocation, maintenance tracking, and disposal. Built with a secure Spring Boot and MySQL backend, and a responsive React frontend using Redux Toolkit and Material UI, the platform streamlines resource workflows and exports audit-ready reports.',
       tags: ['React', 'Spring Boot', 'MySQL', 'Redux Toolkit', 'Material UI', 'JWT', 'WebSockets'],
-      github: 'https://github.com/selva092005',
-      demo: 'https://github.com/selva092005'
+      github: 'https://github.com/selva092005?tab=repositories',
+      demo: 'https://asset-management-system-demo.vercel.app/home'
+    },
+    {
+      id: 'cinesearch',
+      title: 'Cine Search',
+      description: 'A dynamic movie discovery platform built with React and integrated with TMDB API. It allows users to search for movies, view detailed ratings, cast details, release information, and explore trending films in a clean, responsive layout with interactive UI components.',
+      tags: ['React', 'TMDB API', 'Bootstrap'],
+      github: 'https://github.com/selva092005?tab=repositories',
+      demo: 'https://cinesearchvercelapp.vercel.app'
+    },
+    {
+      id: 'weatherapp',
+      title: 'Weather Tracker',
+      description: 'A clean, responsive, single-page Weather Application built with React and Vite that fetches real-time weather information for any city worldwide using the OpenWeatherMap API. Implements custom weather icon mapping, keypress/button query actions, loading state management, and smooth floating CSS animations.',
+      tags: ['React', 'Vite', 'OpenWeatherMap API'],
+      github: 'https://github.com/selva092005?tab=repositories',
+      demo: 'https://selva092005.github.io/Weatherapp'
     }
   ],
   languages: [

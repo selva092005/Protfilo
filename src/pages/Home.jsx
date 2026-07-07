@@ -378,7 +378,7 @@ export const Home = () => {
 
                     {/* Role & Company info */}
                     <Typography variant="body2" fontWeight="800" color="text.primary" sx={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: 0.5, flexWrap: 'wrap' }}>
-                      Frontend Developer Intern{' '}
+                      React Developer Intern{' '}
                       <Box component="span" sx={{ color: 'primary.main', fontWeight: 800 }}>
                         @ Cavin Infotech
                       </Box>
@@ -388,7 +388,7 @@ export const Home = () => {
 
                   {/* Metadata */}
                   <Typography variant="caption" color="text.secondary" fontWeight="700" sx={{ fontSize: '0.725rem', whiteSpace: 'nowrap' }}>
-                    Remote &bull; {currentInternship.duration}
+                    {currentInternship.location} &bull; {currentInternship.duration}
                   </Typography>
                 </Stack>
               </Paper>
@@ -486,8 +486,8 @@ export const Home = () => {
 
           {/* Social Profiles Row */}
           <motion.div variants={itemVariants}>
-            <Box display="flex" flexDirection="column" alignItems="center" gap={3} pt={2} pb={{ xs: 2, md: 3 }}>
-              <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: '0.08em', fontSize: '0.725rem', textTransform: 'uppercase' }}>
+            <Box display="flex" flexDirection="column" alignItems="center" pt={2} pb={{ xs: 2, md: 3 }}>
+              <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: '0.08em', fontSize: '0.725rem', textTransform: 'uppercase', mb: 2 }}>
                 Connect with me
               </Typography>
               <Stack direction="row" spacing={2}>
@@ -499,10 +499,10 @@ export const Home = () => {
                     bgcolor: 'divider',
                     '&:hover': { color: 'primary.main', transform: 'translateY(-3px)' },
                     transition: 'all 0.2s',
-                    p: 1
+                    p: 0.75
                   }}
                 >
-                  <GitHub sx={{ fontSize: '1.1rem' }} />
+                  <GitHub sx={{ fontSize: '0.95rem' }} />
                 </IconButton>
                 <IconButton
                   href={linkedin}
@@ -512,10 +512,10 @@ export const Home = () => {
                     bgcolor: 'divider',
                     '&:hover': { color: 'primary.main', transform: 'translateY(-3px)' },
                     transition: 'all 0.2s',
-                    p: 1
+                    p: 0.75
                   }}
                 >
-                  <LinkedIn sx={{ fontSize: '1.1rem' }} />
+                  <LinkedIn sx={{ fontSize: '0.95rem' }} />
                 </IconButton>
                 <IconButton
                   href={`mailto:${email}`}
@@ -524,10 +524,10 @@ export const Home = () => {
                     bgcolor: 'divider',
                     '&:hover': { color: 'primary.main', transform: 'translateY(-3px)' },
                     transition: 'all 0.2s',
-                    p: 1
+                    p: 0.75
                   }}
                 >
-                  <Email sx={{ fontSize: '1.1rem' }} />
+                  <Email sx={{ fontSize: '0.95rem' }} />
                 </IconButton>
               </Stack>
             </Box>
@@ -553,9 +553,9 @@ export const Home = () => {
             >
               <Box
                 sx={{
-                  width: 22,
-                  height: 36,
-                  borderRadius: 11,
+                  width: 18,
+                  height: 28,
+                  borderRadius: 9,
                   border: '2px solid',
                   borderColor: 'text.secondary',
                   position: 'relative',
@@ -568,7 +568,7 @@ export const Home = () => {
                 <Box
                   component={motion.div}
                   animate={{
-                    y: [2, 12, 2],
+                    y: [2, 10, 2],
                     opacity: [1, 0, 1]
                   }}
                   transition={{
@@ -577,12 +577,12 @@ export const Home = () => {
                     ease: 'easeInOut'
                   }}
                   sx={{
-                    width: 4,
-                    height: 8,
+                    width: 3,
+                    height: 6,
                     borderRadius: '50%',
                     bgcolor: 'primary.main',
                     position: 'absolute',
-                    top: 4
+                    top: 3
                   }}
                 />
               </Box>

@@ -192,14 +192,16 @@ export const Experience = () => {
   // 4. Python Developer Intern (under Zealous Tech Corp)
   // 5. React Developer Intern (under Cavin Infotech)
   const combinedTimeline = [];
-  if (education && education.length >= 3) {
-    combinedTimeline.push({ ...education[0], type: 'education' });
-    combinedTimeline.push({ ...education[1], type: 'education' });
-    combinedTimeline.push({ ...education[2], type: 'education' });
+  if (education) {
+    education.forEach(edu => {
+      combinedTimeline.push({ ...edu, type: 'education' });
+    });
   }
-  if (internships && internships.length >= 2) {
-    combinedTimeline.push({ ...internships[1], type: 'internship' });
-    combinedTimeline.push({ ...internships[0], type: 'internship' });
+  if (internships) {
+    const sortedInternships = [...internships].reverse();
+    sortedInternships.forEach(intern => {
+      combinedTimeline.push({ ...intern, type: 'internship' });
+    });
   }
 
   return (

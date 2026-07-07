@@ -11,6 +11,9 @@ export const CustomCard = ({
   badge,
   hoverEffect = true,
   onClick,
+  image,
+  imageLink,
+  featured = false,
   sx = {}
 }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -79,8 +82,52 @@ export const CustomCard = ({
             fontWeight: '700',
             borderRadius: '6px',
             fontSize: '0.7rem',
+            zIndex: 2,
           }}
         />
+      )}
+      {image && (
+        <Box sx={{ width: '100%', overflow: 'hidden', borderBottom: '1px solid', borderColor: 'divider', zIndex: 1 }}>
+          {imageLink ? (
+            <Box
+              component="a"
+              href={imageLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: 'block', width: '100%', cursor: 'pointer', overflow: 'hidden' }}
+            >
+              <Box
+                component="img"
+                src={image}
+                alt={title}
+                sx={{
+                  width: '100%',
+                  height: featured ? { xs: 200, sm: 320, md: 420 } : { xs: 200, sm: 240, md: 260 },
+                  objectFit: 'contain',
+                  bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(15, 23, 42, 0.4)' : 'rgba(248, 250, 252, 0.6)',
+                  display: 'block',
+                  transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                  '&:hover': {
+                    transform: 'scale(1.025)'
+                  }
+                }}
+              />
+            </Box>
+          ) : (
+            <Box
+              component="img"
+              src={image}
+              alt={title}
+              sx={{
+                width: '100%',
+                height: featured ? { xs: 200, sm: 320, md: 420 } : { xs: 200, sm: 240, md: 260 },
+                objectFit: 'contain',
+                bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(15, 23, 42, 0.4)' : 'rgba(248, 250, 252, 0.6)',
+                display: 'block'
+              }}
+            />
+          )}
+        </Box>
       )}
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 3, md: 4 }, pb: { xs: 4, md: 5 }, position: 'relative', zIndex: 1 }}>
         {(icon || subtitle) && (

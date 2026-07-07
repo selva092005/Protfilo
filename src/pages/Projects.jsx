@@ -5,6 +5,15 @@ import { GitHub, Launch } from '@mui/icons-material';
 import AnimatedSection from '../components/AnimatedSection';
 import SectionHeader from '../components/SectionHeader';
 import CustomCard from '../components/CustomCard';
+import amsLoginImg from '../assets/ams login.png';
+import cinesearchImg from '../assets/cinesearch.png';
+import weatherImg from '../assets/weather.png';
+
+const projectImages = {
+  ams: amsLoginImg,
+  cinesearch: cinesearchImg,
+  weatherapp: weatherImg,
+};
 
 export const Projects = () => {
   const projects = useSelector((state) => state.portfolio.projects);
@@ -74,23 +83,36 @@ export const Projects = () => {
       </AnimatedSection>
 
       <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 2 }}>
-        {projects.map((project, index) => (
-          <Grid item xs={12} sm={12} md={12} size={{ xs: 12, sm: 12, md: 12 }} key={index} sx={{ display: 'flex', width: '100%' }}>
-            <AnimatedSection
-              direction="up"
-              delay={index * 0.1}
-              style={{ display: 'flex', width: '100%', flexGrow: 1 }}
+        {projects.map((project, index) => {
+          const isFeatured = index === 0;
+          return (
+            <Grid
+              item
+              xs={12}
+              sm={isFeatured ? 12 : 6}
+              md={isFeatured ? 12 : 6}
+              key={index}
+              sx={{ display: 'flex', width: '100%' }}
             >
-              <CustomCard
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                actions={getProjectActions(project)}
-                sx={{ width: '100%', height: 'auto', display: 'flex', flexDirection: 'column' }}
-              />
-            </AnimatedSection>
-          </Grid>
-        ))}
+              <AnimatedSection
+                direction="up"
+                delay={index * 0.1}
+                style={{ display: 'flex', width: '100%', flexGrow: 1 }}
+              >
+                <CustomCard
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  actions={getProjectActions(project)}
+                  image={projectImages[project.id]}
+                  imageLink={project.demo}
+                  featured={isFeatured}
+                  sx={{ width: '100%', height: 'auto', display: 'flex', flexDirection: 'column' }}
+                />
+              </AnimatedSection>
+            </Grid>
+          );
+        })}
       </Grid>
     </Container>
   );

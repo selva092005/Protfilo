@@ -153,28 +153,7 @@ export const Navbar = () => {
         </List>
       </Box>
 
-      {/* Drawer Bottom Actions */}
-      <Box px={3} mt="auto">
-        <Divider sx={{ mb: 3 }} />
-        <Stack spacing={2}>
-          <Box display="flex" justifyContent="space-between" alignItems="center">
-            <Typography variant="body2" fontWeight="700" color="text.secondary">
-              Theme Mode
-            </Typography>
-            <IconButton
-              onClick={() => dispatch(toggleTheme())}
-              color="inherit"
-              sx={{
-                bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)',
-                borderRadius: '8px',
-                p: 1
-              }}
-            >
-              {themeMode === 'dark' ? <LightIcon sx={{ fontSize: '1.2rem' }} /> : <DarkIcon sx={{ fontSize: '1.2rem' }} />}
-            </IconButton>
-          </Box>
-        </Stack>
-      </Box>
+
     </Box>
   );
 
