@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardContent, Typography, Box, Chip } from '@mui/material';
+import { Info as InfoIcon } from '@mui/icons-material';
 
 export const CustomCard = ({
   title,
@@ -24,6 +25,70 @@ export const CustomCard = ({
     setCoords({
       x: e.clientX - rect.left,
       y: e.clientY - rect.top
+    });
+  };
+
+  const renderDescription = (text) => {
+    if (!text) return null;
+    const noteRegex = /(\*Note on Live Demo:[\s\S]+?\*)/;
+    const parts = text.split(noteRegex);
+    return parts.map((part, index) => {
+      if (noteRegex.test(part)) {
+        const cleanNote = part.replace(/\*/g, '');
+        const prefix = "Note on Live Demo:";
+        let bodyText = cleanNote;
+        let hasPrefix = false;
+        if (cleanNote.startsWith(prefix)) {
+          bodyText = cleanNote.substring(prefix.length);
+          hasPrefix = true;
+        }
+        return (
+          <Box
+            key={index}
+            sx={{
+              display: 'flex',
+              gap: 1.5,
+              mt: 2.5,
+              p: 2,
+              borderRadius: '8px',
+              bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(239, 68, 68, 0.05)' : 'rgba(239, 68, 68, 0.02)',
+              border: '1px solid',
+              borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(239, 68, 68, 0.15)' : 'rgba(239, 68, 68, 0.08)',
+              borderLeft: '4px solid',
+              borderLeftColor: (theme) => theme.palette.mode === 'dark' ? '#f87171' : '#dc2626',
+            }}
+          >
+            <InfoIcon
+              sx={{
+                fontSize: '1.15rem',
+                color: (theme) => theme.palette.mode === 'dark' ? '#f87171' : '#dc2626',
+                mt: '2px',
+                flexShrink: 0
+              }}
+            />
+            <Typography
+              component="span"
+              sx={{
+                fontSize: '0.825rem',
+                color: 'text.secondary',
+                fontWeight: 500,
+                lineHeight: 1.55,
+                textAlign: 'justify'
+              }}
+            >
+              {hasPrefix && (
+                <span style={{ fontWeight: 700, color: (theme) => theme.palette.mode === 'dark' ? '#f87171' : '#dc2626', marginRight: '4px' }}>
+                  {prefix}
+                </span>
+              )}
+              {bodyText}
+            </Typography>
+          </Box>
+        );
+      }
+      return (
+        <span key={index}>{part}</span>
+      );
     });
   };
 
@@ -165,16 +230,18 @@ export const CustomCard = ({
           <Typography
             variant="body1"
             color="text.secondary"
+            component="div"
             sx={{
               mb: 4,
               flexGrow: 1,
               lineHeight: 1.8,
               fontWeight: 500,
               fontSize: '1rem',
-              textAlign: 'justify'
+              textAlign: 'justify',
+              whiteSpace: 'pre-line'
             }}
           >
-            {description}
+            {renderDescription(description)}
           </Typography>
         )}
 

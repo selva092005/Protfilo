@@ -90,7 +90,7 @@ const initialState = {
     {
       id: 'ams',
       title: 'Asset Management System (AMS)',
-      description: 'Engineered a full-stack Asset Management System (AMS) to manage the end-to-end asset lifecycle—covering procurement, registration, bulk allocation, maintenance tracking, and disposal. Built with a secure Spring Boot and MySQL backend, and a responsive React frontend using Redux Toolkit and Material UI, the platform streamlines resource workflows and exports audit-ready reports.',
+      description: 'Engineered a full-stack Asset Management System (AMS) to manage the end-to-end asset lifecycle—covering procurement, registration, bulk allocation, maintenance tracking, and disposal. Built with a secure Spring Boot and MySQL backend, and a responsive React frontend using Redux Toolkit and Material UI, the platform streamlines resource workflows and exports audit-ready reports.\n\n*Note on Live Demo: Since the backend is hosted on a free cloud hosting tier, it automatically spins down during periods of inactivity. On the initial request, please allow 30–50 seconds for the server to spin up and load the database. If you experience any persistent connection issues, please feel free to message or contact me directly.*',
       tags: ['React', 'Spring Boot', 'MySQL', 'Redux Toolkit', 'Material UI', 'JWT', 'WebSockets'],
       github: 'https://github.com/selva092005?tab=repositories',
       demo: 'https://asset-management-system-demo.vercel.app/home'
