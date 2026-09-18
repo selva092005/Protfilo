@@ -27,8 +27,8 @@ export const Home = () => {
   const { name, title, summary, github, linkedin, email } = useSelector((state) => state.portfolio.profile);
   const internships = useSelector((state) => state.portfolio.internships);
 
-  // Active internship details (Cavin Infotech)
-  const currentInternship = internships.find(i => i.company === 'Cavin Infotech') || internships[0];
+  // Active internship details (HEPL)
+  const currentInternship = internships[0];
 
   // Framer Motion entry animations
   const containerVariants = {
@@ -353,8 +353,11 @@ export const Home = () => {
                         px: 1.25,
                         py: 0.5,
                         borderRadius: '6px',
-                        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(34, 197, 94, 0.05)',
-                        border: '1px solid rgba(34, 197, 94, 0.15)'
+                        bgcolor: (theme) => currentInternship?.status === 'Completed'
+                          ? (theme.palette.mode === 'dark' ? 'rgba(59, 130, 246, 0.12)' : 'rgba(59, 130, 246, 0.08)')
+                          : (theme.palette.mode === 'dark' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(34, 197, 94, 0.05)'),
+                        border: '1px solid',
+                        borderColor: currentInternship?.status === 'Completed' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(34, 197, 94, 0.15)'
                       }}
                     >
                       <Box
@@ -362,25 +365,32 @@ export const Home = () => {
                           width: 6,
                           height: 6,
                           borderRadius: '50%',
-                          bgcolor: '#22c55e',
-                          animation: 'pulse 2s infinite',
-                          '@keyframes pulse': {
-                            '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(34, 197, 94, 0.7)' },
-                            '70%': { transform: 'scale(1.1)', boxShadow: '0 0 0 4px rgba(34, 197, 94, 0)' },
-                            '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(34, 197, 94, 0)' }
-                          }
+                          bgcolor: currentInternship?.status === 'Completed' ? '#3b82f6' : '#22c55e',
+                          ...(currentInternship?.status !== 'Completed' && {
+                            animation: 'pulse 2s infinite',
+                            '@keyframes pulse': {
+                              '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(34, 197, 94, 0.7)' },
+                              '70%': { transform: 'scale(1.1)', boxShadow: '0 0 0 4px rgba(34, 197, 94, 0)' },
+                              '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(34, 197, 94, 0)' }
+                            }
+                          })
                         }}
                       />
-                      <Typography variant="caption" color="#22c55e" fontWeight="800" sx={{ fontSize: '0.625rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                        Active
+                      <Typography
+                        variant="caption"
+                        color={currentInternship?.status === 'Completed' ? '#3b82f6' : '#22c55e'}
+                        fontWeight="800"
+                        sx={{ fontSize: '0.625rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}
+                      >
+                        {currentInternship?.status || 'Completed'}
                       </Typography>
                     </Box>
 
                     {/* Role & Company info */}
                     <Typography variant="body2" fontWeight="800" color="text.primary" sx={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: 0.5, flexWrap: 'wrap' }}>
-                      React Developer Intern{' '}
+                      {currentInternship.role}{' '}
                       <Box component="span" sx={{ color: 'primary.main', fontWeight: 800 }}>
-                        @ Cavin Infotech
+                        @ {currentInternship.company}
                       </Box>
                       <VerifiedIcon sx={{ fontSize: '0.9rem', color: '#3897f0' }} />
                     </Typography>
@@ -388,7 +398,7 @@ export const Home = () => {
 
                   {/* Metadata */}
                   <Typography variant="caption" color="text.secondary" fontWeight="700" sx={{ fontSize: '0.725rem', whiteSpace: 'nowrap' }}>
-                    {currentInternship.location} &bull; {currentInternship.duration}
+                    {currentInternship.location ? `${currentInternship.location} \u2022 ` : ''}{currentInternship.duration}
                   </Typography>
                 </Stack>
               </Paper>

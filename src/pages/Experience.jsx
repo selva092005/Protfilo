@@ -151,9 +151,10 @@ const TimelineItem = ({ item, index, isLast }) => {
               gap={0.5}
               mb={isEducation ? 0 : 2}
             >
-              {isEducation ? item.institution : `${item.company} • `}
-              {!isEducation && <LocIcon sx={{ fontSize: '1rem' }} />}
-              {!isEducation && ` ${item.location}`}
+              {isEducation ? item.institution : item.company}
+              {!isEducation && item.location && ` • `}
+              {!isEducation && item.location && <LocIcon sx={{ fontSize: '1rem' }} />}
+              {!isEducation && item.location && ` ${item.location}`}
             </Typography>
 
             {isEducation ? (
@@ -169,7 +170,7 @@ const TimelineItem = ({ item, index, isLast }) => {
                 </Box>
               </>
             ) : (
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75, textAlign: 'justify' }}>
+              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75, textAlign: 'justify', whiteSpace: 'pre-line' }}>
                 {item.description}
               </Typography>
             )}
@@ -189,8 +190,7 @@ export const Experience = () => {
   // 1. Secondary Education
   // 2. Higher Secondary Education
   // 3. College (BE ECE)
-  // 4. Python Developer Intern (under Zealous Tech Corp)
-  // 5. React Developer Intern (under Cavin Infotech)
+  // 4. Software Developer Intern (under HEPL)
   const combinedTimeline = [];
   if (education) {
     education.forEach(edu => {

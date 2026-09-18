@@ -10,7 +10,7 @@ const initialState = {
     linkedin: 'https://www.linkedin.com/in/selva-bharathi-v',
     github: 'https://github.com/selva092005',
     web3FormsKey: '78b076d1-fc79-4b2f-a3ab-7c28b46ed344', // Get your free access key at https://web3forms.com
-    summary: 'Innovative Frontend Developer with expertise in building scalable, responsive, and user-centric web applications. Proficient in React, Redux Toolkit, Material UI, Spring Boot, MySQL, and REST APIs. Experienced in developing end-to-end solutions that streamline business processes, automate workflows, and improve operational efficiency. Passionate about creating performant, accessible, and maintainable software while continuously expanding technical expertise and adopting modern development practices.'
+    summary: 'Motivated Frontend Developer with a strong foundation in HTML5, CSS3, JavaScript, and React.js, passionate about building responsive, user-friendly, and scalable web applications. Skilled in React Hooks, React Router, Redux Toolkit, Bootstrap, and Material UI, with a focus on developing reusable components, managing application state, and integrating REST APIs. Possess additional knowledge of Java, Spring Boot, Node.js, Express.js, and MySQL, with a strong willingness to learn and adapt to modern technologies. Seeking an opportunity to contribute to a collaborative development team while continuously enhancing my technical skills.'
   },
   skills: [
     { id: 'html', name: 'HTML/CSS', category: 'frontend', color: '#e34f26' },
@@ -57,14 +57,19 @@ const initialState = {
   ],
   internships: [
     {
-      role: 'React Developer Intern',
-      company: 'Cavin Infotech',
-      location: 'On-site',
-      duration: 'Feb 2026 - Present',
-      description: 'Developing responsive web interfaces, optimizing UI performance, and collaborating on product modules. Programmed key features for a professional Asset Management System (AMS) including interactive dashboards, status charts, and state-synchronized bulk transfer operations using React, Redux Toolkit, and Material UI.'
+      role: 'Software Developer Intern',
+      company: 'HEPL',
+      duration: '02/2026 – 08/2026',
+      status: 'Completed',
+      description: '• Developed and maintained responsive web application features using React.js and Material UI, creating intuitive user interfaces and reusable components.\n• Integrated and tested RESTful APIs across multiple modules using Swagger, debugged application issues, and collaborated with the development team to deliver reliable web application features.'
     }
   ],
   certifications: [
+    {
+      title: 'Software Development Internship Completion Certificate',
+      issuer: 'HEPL',
+      duration: '08/2026'
+    },
     {
       title: 'Certificate of Completion – CSS',
       issuer: 'CodeKaro',
