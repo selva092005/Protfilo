@@ -7,7 +7,7 @@ const initialState = {
     email: 'selvabharathi2005vss@gmail.com',
     phone: '9384447886',
     location: 'Vriddhachalam, India',
-    linkedin: 'https://www.linkedin.com/in/v-selva-bharathi-2638a6269',
+    linkedin: 'https://www.linkedin.com/in/selva-bharathi-v',
     github: 'https://github.com/selva092005',
     web3FormsKey: '78b076d1-fc79-4b2f-a3ab-7c28b46ed344', // Get your free access key at https://web3forms.com
     summary: 'Innovative Frontend Developer with expertise in building scalable, responsive, and user-centric web applications. Proficient in React, Redux Toolkit, Material UI, Spring Boot, MySQL, and REST APIs. Experienced in developing end-to-end solutions that streamline business processes, automate workflows, and improve operational efficiency. Passionate about creating performant, accessible, and maintainable software while continuously expanding technical expertise and adopting modern development practices.'
